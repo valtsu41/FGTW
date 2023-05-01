@@ -57,8 +57,7 @@ var main = func(addon) {
 		acmi: loadModule(dir ~ "/acmi.nas")
 	};
 
-	#var modules = ["/aircraft.nas", "/ai.nas"];
-	var modules = ["/aircraft.nas"];
+	var modules = ["/aircraft.nas", "/ai.nas"];
 
 	foreach (module; modules) compile(io.readfile(dir ~ module), module)();
 
