@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+	<meta>
+		<file-type type="string">FlightGear add-on metadata</file-type>
+		<format-version type="int">1</format-version>
+	</meta>
+
+	<addon>
+		<identifier>FGTW</identifier>
+		<name>FGTW</name>
+		<version>0.1.0</version>
+
+		<short-description>An aircraft independent Tacview recorder</short-description>
+	</addon>
+</PropertyList>

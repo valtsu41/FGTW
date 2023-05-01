@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+	<sim>
+		<fgtw>
+			<recording type="bool">false</recording>
+			<interval type="float">1.0</interval>
+			<metadata>
+				<author type="string">Anonymous</author>
+				<title type="string">Untitled</title>
+			</metadata>
+			<aircraft>
+				<name type="string">Unknown</name>
+				<type type="string">Air + FixedWing</type>
+			</aircraft>
+		</fgtw>
+	</sim>
+</PropertyList>

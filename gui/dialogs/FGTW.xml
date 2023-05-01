@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+	<name>FGTW</name>
+
+	<height>500</height>
+	<width>500</width>
+	<resizable>true</resizable>
+	<layout>vbox</layout>
+
+	<group>
+		<row>0</row>
+		<layout>hbox</layout>
+
+		<button>
+			<col>0</col>
+
+			<legend>Stop</legend>
+			<color>
+				<red>1.0</red>
+				<green>0.0</green>
+				<blue>0.0</blue>
+			</color>
+
+			<enable>
+				<property>/sim/fgtw/recording</property>
+			</enable>
+
+			<binding>
+				<command>dialog-apply</command>
+			</binding>
+			<binding>
+				<command>fgtw-stop</command>
+			</binding>
+		</button>
+		<button>
+			<row>0</row>
+
+			<legend>Start</legend>
+			<color>
+				<red>0.0</red>
+				<green>1.0</green>
+				<blue>0.0</blue>
+			</color>
+	
+			<enable>
+				<not><property>/sim/fgtw/recording</property></not>
+			</enable>
+
+			<binding>
+				<command>dialog-apply</command>
+			</binding>
+			<binding>
+				<command>fgtw-start</command>
+			</binding>
+		</button>
+	</group>
+
+
+
+	<group>
+		<row>1</row>
+		<layout>table</layout>
+
+		<slider>
+			<row>0</row>
+			<col>0</col>
+
+			<label>Record interval</label>
+
+			<property>/sim/fgtw/interval</property>
+			<min>0.5</min>
+			<max>5.0</max>
+			<step>0.1</step>
+
+			<binding>
+				<command>dialog-apply</command>
+			</binding>
+		</slider>
+		<text>
+			<row>0</row>
+			<col>1</col>
+
+			<format>%.1f s</format>
+			<property>/sim/fgtw/interval</property>
+			<live>true</live>
+		</text>
+
+		<input>
+			<row>1</row>
+			<col>0</col>
+
+			<label>Tacview object name</label>
+
+			<property>/sim/fgtw/aircraft/name</property>
+
+			<enable>
+				<not><property>/sim/fgtw/recording</property></not>
+			</enable>
+
+			<binding>
+				<command>dialog-apply</command>
+			</binding>
+		</input>
+		<combo>
+			<row>1</row>
+			<col>1</col>
+
+			<label>Tacview type</label>
+			<property>/sim/fgtw/aircraft/type</property>
+			<value>Air+FixedWing</value>
+			<value>Air+RotorCraft</value>
+			<value>Ground+Vehicle</value>
+			<value>Sea+Watercraft</value>
+			<value>Ground+Static+Building</value>
+
+			<enable>
+				<not><property>/sim/fgtw/recording</property></not>
+			</enable>
+
+			<binding>
+				<command>dialog-apply</command>
+			</binding>
+		</combo>
+
+		<input>
+			<row>2</row>
+			<col>0</col>
+
+			<label>Title</label>
+
+			<property>/sim/fgtw/metadata/title</property>
+
+			<enable>
+				<not><property>/sim/fgtw/recording</property></not>
+			</enable>
+
+			<binding>
+				<command>dialog-apply</command>
+			</binding>
+		</input>
+		<input>
+			<row>2</row>
+			<col>1</col>
+
+			<label>Author</label>
+
+			<property>/sim/fgtw/metadata/author</property>
+
+			<enable>
+				<not><property>/sim/fgtw/recording</property></not>
+			</enable>
+
+			<binding>
+				<command>dialog-apply</command>
+			</binding>
+		</input>
+	</group>
+
+	<button>
+		<col>2</col>
+		<legend>Close</legend>
+		<binding>
+			<command>dialog-close</command>
+		</binding>
+	</button>
+
+</PropertyList>

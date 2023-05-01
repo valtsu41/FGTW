@@ -1,0 +1,29 @@
+<PropertyList>
+	<meta>
+		<file-type type="string">FlightGear add-on menu bar items</file-type>
+		<format-version type="int">1</format-version>
+	</meta>
+	<menubar-items>
+		<menu>
+			<label>Tacview</label>
+
+			<item>
+				<label>Controls</label>
+				<binding>
+					<command>dialog-show</command>
+					<dialog-name>FGTW</dialog-name>
+				</binding>
+			</item>
+			<item>
+				<label>Reload</label>
+				<binding>
+					<command>nasal</command>
+					<script>
+						fgcommand("fgtw-stop");
+						addons.commandAddonReload(props.getNode("/addons/by-id/FGTW"));
+					</script>
+				</binding>
+			</item>
+		</menu>
+	</menubar-items>
+</PropertyList>
