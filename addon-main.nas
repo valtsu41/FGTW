@@ -54,7 +54,9 @@ var main = func(addon) {
 	var dir = addon.basePath;
 
 	globals["fgtw"] = {
-		acmi: loadModule(dir ~ "/acmi.nas")
+		ADDON_DIR: dir,
+		acmi: loadModule(dir ~ "/acmi.nas"),
+		utils: loadModule(dir ~ "/utils.nas")
 	};
 
 	var modules = ["/aircraft.nas", "/ai.nas"];
